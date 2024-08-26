@@ -1,4 +1,4 @@
-package com.artemnizhnyk.servletpractice;
+package com.artemnizhnyk.servletpractice.web.controller;
 
 import java.io.*;
 
