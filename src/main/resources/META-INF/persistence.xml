@@ -3,7 +3,24 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
-    <persistence-unit name="default">
+
+    <persistence-unit name="default" transaction-type="JTA">
+
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <jta-data-source>java:app/jdbc/appDataSource</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5437/servlet-db"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="postgres"/>
+
+            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.ddl-generation" value="update"/>
+        </properties>
 
     </persistence-unit>
+
 </persistence>
