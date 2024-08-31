@@ -1,30 +1,19 @@
 package com.artemnizhnyk.servletpractice.domain.model;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.faces.flow.FlowScoped;
+import jakarta.inject.Named;
 
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@Table(name = "user_info")
-@Entity
-public class UserInfo {
+import java.io.Serializable;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(unique = true, nullable = false)
+@Named
+@FlowScoped("userinfo")
+public class UserInfo implements Serializable {
+
     private String firstname;
-    @Column(unique = true, nullable = false)
     private String surname;
-    @Column(unique = true, nullable = false)
     private String email;
-    @Column(unique = true, nullable = false)
+    private String phoneNumber;
     private String city;
-    @Column(unique = true, nullable = false)
     private String street;
-    @Column(unique = true, nullable = false)
     private String postalCode;
 }
