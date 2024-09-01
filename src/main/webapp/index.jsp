@@ -4,14 +4,10 @@
 <head>
     <title>JSP - Hello World</title>
 </head>
-<body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<form method="post" action="helloServlet">
-        <input type="text" name="enteredValue"/>
-        <button type="submit" value="Submit">Submit</button>
-</form>
-<a href="helloServlet">Hello Servlet</a>
-</body>
+<h:body>
+    <h:form>
+        <h:commandLink action="#{customerController.listSetup}"
+                       value="View all customers"/>
+    </h:form>
+</h:body>
 </html>
