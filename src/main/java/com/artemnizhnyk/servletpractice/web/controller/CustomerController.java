@@ -3,6 +3,7 @@ package com.artemnizhnyk.servletpractice.web.controller;
 import com.artemnizhnyk.servletpractice.domain.converter.CustomerConverter;
 import com.artemnizhnyk.servletpractice.domain.model.Customer;
 import com.artemnizhnyk.servletpractice.domain.util.PagingInfo;
+import com.artemnizhnyk.servletpractice.repository.CustomerDao;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
