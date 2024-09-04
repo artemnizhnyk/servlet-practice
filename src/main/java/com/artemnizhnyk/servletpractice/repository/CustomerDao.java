@@ -1,5 +1,8 @@
 package com.artemnizhnyk.servletpractice.repository;
 
+import com.artemnizhnyk.servletpractice.domain.exception.NonexistentEntityException;
+import com.artemnizhnyk.servletpractice.domain.exception.PreexistingEntityException;
+import com.artemnizhnyk.servletpractice.domain.exception.RollbackFailureException;
 import com.artemnizhnyk.servletpractice.domain.model.Customer;
 import jakarta.annotation.Resource;
 import jakarta.ejb.EJBContext;
