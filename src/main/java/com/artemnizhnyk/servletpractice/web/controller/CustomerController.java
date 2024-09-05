@@ -7,6 +7,7 @@ import com.artemnizhnyk.servletpractice.repository.CustomerDao;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.model.SelectItem;
 import jakarta.inject.Named;
 
 import java.io.Serializable;
@@ -24,6 +25,37 @@ public class CustomerController implements Serializable {
 
     @EJB
     private CustomerDao dao;
+
+    @PostConstruct
+    public void init() {
+        pagingInfo = new PagingInfo();
+        converter = new CustomerConverter();
+    }
+
+    public PagingInfo getPagingInfo() {
+        if (pagingInfo.getItemCount() == -1) {
+            pagingInfo.setItemCount(dao.getCustomerCount());
+        }
+        return pagingInfo;
+    }
+
+    public SelectItem[] getCustomerItemsAvailableSelectMany() {
+        return JsfUtil.getSelectItems(dao.findCustomerEntities(), false);
+    }
+
+    public SelectItem[] getCustomerItemsAvailableSelectOne() {
+        return JsfUtil.getSelectItems(dao.findCustomerEntities(), true);
+    }
+
+    public Customer getCustomer() {
+        if (customer == null) {
+            customer = (Customer) JsfUtil.getObjectFromRequestParameter("jsfcrud.currentCustomer", converter, null);
+        }
+        if (customer == null) {
+            customer = new Customer();
+        }
+        return customer;
+    }
 
     public String listSetup() {
         reset(true);
