@@ -7,6 +7,7 @@ import com.artemnizhnyk.servletpractice.domain.model.Customer;
 import com.artemnizhnyk.servletpractice.domain.model.Telephone;
 import com.artemnizhnyk.servletpractice.domain.util.PagingInfo;
 import com.artemnizhnyk.servletpractice.repository.CustomerDao;
+import com.artemnizhnyk.servletpractice.util.JsfUtil;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
