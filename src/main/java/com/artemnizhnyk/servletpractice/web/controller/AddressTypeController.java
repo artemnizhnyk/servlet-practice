@@ -1,10 +1,12 @@
 package com.artemnizhnyk.servletpractice.web.controller;
 
 
+import com.artemnizhnyk.servletpractice.repository.AddressTypeDao;
 import com.artemnizhnyk.servletpractice.util.JsfUtil;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.model.SelectItem;
+import jakarta.inject.Named;
 
 import java.io.Serializable;
 
