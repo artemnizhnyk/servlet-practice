@@ -1,4 +1,5 @@
-import com.artemnizhnyk.servletpractice.domain.model.Telephone;
+package com.artemnizhnyk.servletpractice.domain.model;
+
 import jakarta.persistence.*;
 
 import java.io.Serializable;
