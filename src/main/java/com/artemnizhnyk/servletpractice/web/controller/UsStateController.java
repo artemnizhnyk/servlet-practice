@@ -1,7 +1,8 @@
 package com.artemnizhnyk.servletpractice.web.controller;
 
-import com.ensode.jakartaeealltogether.dao.UsStateDao;
-import com.ensode.jakartaeealltogether.faces.util.JsfUtil;
+
+import com.artemnizhnyk.servletpractice.repository.UsStateDao;
+import com.artemnizhnyk.servletpractice.util.JsfUtil;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.model.SelectItem;

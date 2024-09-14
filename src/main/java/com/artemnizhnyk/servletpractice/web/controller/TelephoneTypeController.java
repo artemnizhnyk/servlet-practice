@@ -1,5 +1,6 @@
 package com.artemnizhnyk.servletpractice.web.controller;
 
+import com.artemnizhnyk.servletpractice.repository.TelephoneTypeDao;
 import com.artemnizhnyk.servletpractice.util.JsfUtil;
 import jakarta.ejb.EJB;
 import jakarta.enterprise.context.SessionScoped;
